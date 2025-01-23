@@ -3,11 +3,13 @@ import joblib
 from flask import Flask, render_template, request, session
 import pandas as pd
 
-# Load the pre-trained model and label encoders
-model_dir = r'D:\Websites\Foodball Match Predictor'
-model = joblib.load(os.path.join(model_dir, 'football_match_predictor.joblib'))
-label_encoder = joblib.load(os.path.join(model_dir, 'label_encoder.joblib'))
-team_encoder = joblib.load(os.path.join(model_dir, 'team_encoder.joblib'))
+# Get the current working directory (where the app runs)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Update model file paths
+model = joblib.load(os.path.join(BASE_DIR, 'football_match_predictor.joblib'))
+label_encoder = joblib.load(os.path.join(BASE_DIR, 'label_encoder.joblib'))
+team_encoder = joblib.load(os.path.join(BASE_DIR, 'team_encoder.joblib'))
 
 # Initialize Flask app
 app = Flask(__name__)
