@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Match Prediction</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Football Match Prediction Result</h1>
+    
+    <div class="prediction-section">
+      <h3>Prediction Result</h3>
+      <p>The predicted result for the match between <strong>{{ home_team }}</strong> and <strong>{{ away_team }}</strong> is:</p>
+      <h2>{{ result }}</h2>
+    </div>
+    
+    <a href="{{ url_for('index') }}">Go back to Prediction</a>
+  </div>
+</body>
+</html>
