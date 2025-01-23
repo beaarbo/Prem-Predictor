@@ -21,7 +21,7 @@ def index():
     # Initialize session for storing prediction history
     if 'history' not in session:
         session['history'] = []
-    return render_template('templates/index.html', history=session['history'])
+    return render_template('Templates/index.html', history=session['history'])
 
 # Predict route
 @app.route('/predict', methods=['POST'])
@@ -53,7 +53,7 @@ def predict():
     session['history'].append(history_entry)
     session.modified = True  # Mark session as modified to save changes
 
-    return render_template('templates/index.html', prediction=prediction_result, history=session['history'])
+    return render_template('Templates/index.html', prediction=prediction_result, history=session['history'])
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
